@@ -136,6 +136,11 @@ if generate_button:
             else:
                 st.markdown(result["answer"])
 
+                if result.get("references"):
+                    st.markdown("## References")
+                    for reference in result["references"]:
+                        st.markdown(reference)
+
             # Display retrieved evidence
             st.divider()
             st.subheader("Retrieved Research Evidence")
